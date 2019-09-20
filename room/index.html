@@ -6,31 +6,49 @@
     <title>多人数ビデオ通話</title>
     <link rel="stylesheet" href="../shared/style.css">
 		<style>
+			*{margin:0px;padding:0px;}
+		
 		.flex{display:flex;flex-direction: row;}
-		.flex>div{flex:1;}
+		.flex>div{flex:1;text-align:left;}
 		*,input{font-size:20px;margin:0;padding:0;}
 		@media(max-width:980px){
 			.flex{display:block;width:100%;}
+			.flex>div{display:block;text-align:left;}
 			video,p,h1{width:100vw;}
+			.container{width:100%;}
 		}
 		.none{display:none;}
+		ul{margin-left:2em;}
 		</style>
   </head>
   <body>
     <div class="container">
       <h1 class="heading">多人数ビデオ通話</h1>
-      <p class="note">
-        最初にモードを選択して、クラス名を入力:
-        <a href="#">フルメッシュ</a> / <a href="#sfu">映像・音声ストリームにサーバ利用</a>
-				<img src="room.png">
-      </p>
+      <div class="note flex">
+				<div>
+					<p>①サイトにアクセス<br><img src="room.png"></p>
+				</div>
+        <div>②モードを選択：
+					<ul>
+        		<li><a href="#">フルメッシュ</a></li>						<li> <a href="#sfu">サーバ利用</a></li>
+					</ul>
+				</div>
+			
+				<div>
+					<p>③クラスを指定</p>
+						<span id="js-room-mode"></span>:
+						<input type="text" placeholder="Room Name" id="js-room-id">
+						<p>
+							<button id="js-join-trigger">入室</button>
+							<button id="js-leave-trigger">退室</button>
+						</p>
+					</p>
+				</div>
+      </div>
       <div class="room flex">
         <div>
-          <video id="js-local-stream"></video>
-          <span id="js-room-mode"></span>:
-          <input type="text" placeholder="Room Name" id="js-room-id">
-          <button id="js-join-trigger">入室</button>
-          <button id="js-leave-trigger">退室</button>
+          <p><video id="js-local-stream"></video></p>
+          
         </div>
 
         <div class="remote-streams" id="js-remote-streams"></div>
@@ -40,6 +58,7 @@
           <input type="text" id="js-local-text">
           <button id="js-send-trigger">投稿</button>
         </div>
+
       </div>
       <p class="meta none" id="js-meta"></p>
     </div>
