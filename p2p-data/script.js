@@ -32,17 +32,17 @@ const Peer = window.Peer;
     const dataConnection = peer.connect(remoteId.value);
 
     dataConnection.once('open', async () => {
-      messages.textContent += `=== DataConnection has been opened ===\n`;
+      messages.textContent += `=== 接続開始 ===\n`;
 
       sendTrigger.addEventListener('click', onClickSend);
     });
 
     dataConnection.on('data', data => {
-      messages.textContent += `Remote: ${data}\n`;
+      messages.textContent += `相手: ${data}\n`;
     });
 
     dataConnection.once('close', () => {
-      messages.textContent += `=== DataConnection has been closed ===\n`;
+      messages.textContent += `=== 接続終了 ===\n`;
       sendTrigger.removeEventListener('click', onClickSend);
     });
 
@@ -55,7 +55,7 @@ const Peer = window.Peer;
       const data = localText.value;
       dataConnection.send(data);
 
-      messages.textContent += `You: ${data}\n`;
+      messages.textContent += `あなた: ${data}\n`;
       localText.value = '';
     }
   });
@@ -65,17 +65,17 @@ const Peer = window.Peer;
   // Register connected peer handler
   peer.on('connection', dataConnection => {
     dataConnection.once('open', async () => {
-      messages.textContent += `=== DataConnection has been opened ===\n`;
+      messages.textContent += `=== 接続開始 ===\n`;
 
       sendTrigger.addEventListener('click', onClickSend);
     });
 
     dataConnection.on('data', data => {
-      messages.textContent += `Remote: ${data}\n`;
+      messages.textContent += `相手: ${data}\n`;
     });
 
     dataConnection.once('close', () => {
-      messages.textContent += `=== DataConnection has been closed ===\n`;
+      messages.textContent += `=== 接続終了 ===\n`;
       sendTrigger.removeEventListener('click', onClickSend);
     });
 
@@ -88,7 +88,7 @@ const Peer = window.Peer;
       const data = localText.value;
       dataConnection.send(data);
 
-      messages.textContent += `You: ${data}\n`;
+      messages.textContent += `あなた: ${data}\n`;
       localText.value = '';
     }
   });
