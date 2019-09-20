@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="../shared/style.css">
 		<style>
 			.flex{display:flex;flex-direction: row;}
-			.dlex div{flex:1;}
+			.flex>div{flex:1;}
 			*,input{font-size:20px;margin:0;padding:0;}
 			@media(max-width:980px){
 				.flex{display:block;width:100%;}
 				video,p,h1{width:100vw;}
 			}
+			.none{display:none;}
 		</style>
   </head>
   <body>
@@ -48,7 +49,7 @@
 
 				
       </div>
-      <p class="meta" id="js-meta" style="display:none;"></p>
+      <p class="meta none" id="js-meta"></p>
     </div>
     <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
     <script src="../shared/key.js"></script>
