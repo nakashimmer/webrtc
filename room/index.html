@@ -12,11 +12,11 @@
 		.flex>div{flex:1;text-align:left;}
 		*,input{font-size:20px;margin:0;padding:0;}
 		@media(max-width:980px){
-			.flex{display:block;width:100%;}
+			.note.flex{display:block;}
 			.flex>div{display:block;text-align:left;}
-			video,p,h1{width:100vw;}
+			p,h1{width:100vw;}
 			.container{width:100%;}
-			.note{width:calc(90% - 2em);}
+			.note{margin:1em;}
 		}
 		.none{display:none;}
 		ul{margin-left:2em;}
@@ -49,19 +49,18 @@
       </div>
       <div class="room flex">
         <div>
-          <p><video id="js-local-stream"></video></p>
-          
+          <video id="js-local-stream"></video>
         </div>
 
         <div class="remote-streams" id="js-remote-streams"></div>
+			</div>
+			<div>
+				<pre class="messages" id="js-messages"></pre>
+				<input type="text" id="js-local-text">
+				<button id="js-send-trigger">投稿</button>
+			</div>
 
-        <div>
-          <pre class="messages" id="js-messages"></pre>
-          <input type="text" id="js-local-text">
-          <button id="js-send-trigger">投稿</button>
-        </div>
-
-      </div>
+      
       <p class="meta none" id="js-meta"></p>
     </div>
     <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
