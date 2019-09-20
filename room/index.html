@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="../shared/style.css">
 		<style>
 			*{margin:0px;padding:0px;}
-		.note{border:1px solid gray;margin:1em;padding:1em;border-radius:1em;}
-		.flex{display:flex;flex-direction: row;}
-		.flex>div{flex:1;text-align:left;}
-		*,input{font-size:20px;margin:0;padding:0;}
-		@media(max-width:980px){
-			.note.flex{display:block;}
-			.flex>div{display:block;text-align:left;}
-			.container{width:100%;}
-			.note{margin:1em;}
-		}
-		.none{display:none;}
-		ul{margin-left:2em;}
-		.remote-streams video{width:50%;}
+			.note{border:1px solid gray;margin:1em;padding:1em;border-radius:1em;}
+			.flex{display:flex;flex-direction: row;}
+			.flex>div{flex:1;text-align:left;}
+			*,input{font-size:20px;margin:0;padding:0;}
+			@media(max-width:980px){
+				.note.flex{display:block;}
+				.flex>div{display:block;text-align:left;}
+				.container{width:100%;}
+				.note{margin:1em;}
+			}
+			.none{display:none;}
+			ul{margin-left:2em;}
+			.remote-streams video{width:50%;}
+			input,button{
+				border:1px solid gray;
+				line-height:1.3em;
+				padding:0.3em;
+			}
+			button{
+				border-radius:0.3em;
+				background-color:#ddd;
+			}
 		</style>
   </head>
   <body>
