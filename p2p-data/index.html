@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../shared/style.css">
 			<style>
 				*{margin:0px;padding:0px;}
+				.note{border:1px solid gray;margin:1em;padding:1em;border-radius:1em;}
 			.flex{display:flex;flex-direction: row;}
-			.flex>*{flex:1;}
+			.flex>*{flex:1;text-align:left;}
 			*,input{font-size:20px;margin:0;padding:0;}
 			@media(max-width:980px){
 				.flex{display:block;width:100%;}
@@ -16,25 +17,31 @@
 				pre#js-messages.messages{width:95vw !important;}
 				div{widows: 100% !important;}
 				.container{width:100%;}
-			
+				.note{width:calc(90% - 2em);}
 			}
 			.none{display:none;}
+			ul{margin-left: 2em;}
 		</style>
   </head>
   <body>
     <div class="container">
       <h1 class="heading">1対1 P2Pテキスト通話</h1>
       <div class="note flex">
-        <p>サイトにアクセス。「相手のID」を入力して呼び出してください。</p>
-				<p><img src="p2pdata.png"></p>
+				<div>
+        	<p>①サイトにアクセス。<br><img src="p2pdata.png"></p>
+				</div>
+				<div>
+					②「相手のID」を入力して呼び出してください。</p>
+					<ul>
+          <li>自分のID: <span id="js-local-id"></span></li>
+          <li><input type="text" placeholder="Remote Peer ID" id="js-remote-id">
+          <button id="js-connect-trigger">📞呼び出し</button>
+          <button id="js-close-trigger">終了</button></li>
+
+				</div>
       </div>
       <div class="p2p-data flex">
-        <div>
-          <p>自分のID: <span id="js-local-id"></span></p>
-          <input type="text" placeholder="Remote Peer ID" id="js-remote-id">
-          <button id="js-connect-trigger">📞呼び出し</button>
-          <button id="js-close-trigger">終了</button>
-        </div>
+ 
         <div>
           <pre class="messages" id="js-messages"></pre>
           <input type="text" id="js-local-text">

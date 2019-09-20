@@ -6,43 +6,46 @@
     <title>1対1 P2Pビデオ通話</title>
     <link rel="stylesheet" href="../shared/style.css">
 		<style>
+			.note{border:1px solid gray;margin:1em;padding:1em;border-radius:1em;}
 			.flex{display:flex;flex-direction: row;}
-			.flex>div{flex:1;}
+			.flex>div{flex:1;text-align: left;}
 			*,input{font-size:20px;margin:0;padding:0;}
 			@media(max-width:980px){
 				.flex{display:block;width:100%;}
 				video,p,h1{width:100vw;}
+				.container{width:100%;}
+				.note{width:calc(90% - 2em);}
 			}
 			.none{display:none;}
+			ul{margin-left: 2em;}
 		</style>
   </head>
   <body>
     <div class="container">
       <h1 class="heading">1対1 P2Pビデオ通話</h1>
       <div class="note flex">
-				<p>
-				サイトにアクセス。
-				「相手のID」を入力して呼び出してください</p>
-				<p><img src="p2pmedia.png">
-				</p>
+				<div>
+				①サイトにアクセス。<br><img src="p2pmedia.png">
+				</div>
+				<div>
+				<p>②「相手のID」を入力して呼び出してください</p>
+				<ul>
+					<li>自分のID: <span id="js-local-id"></span></li>
+					<li><input type="text" placeholder="相手のID" id="js-remote-id">
+						<button id="js-call-trigger">📞呼出</button>
+          	<button id="js-close-trigger">終了</button>
+				</div>
 			</div>
         
       </p>
       <div class="p2p-media flex">
    
-        <div class="local-stream"  style="flex:1;">
-          <p>自分のID: <span id="js-local-id"></span></p>
-					<p>
-          	<input type="text" placeholder="相手のID" id="js-remote-id">
-						<button id="js-call-trigger">📞呼び出し</button>
-          	<button id="js-close-trigger">終了</button>
-					</p>
+        <div class="local-stream">
 				  <video id="js-local-stream" ></video>
-        
         </div>
 
 
-				<div class="remote-stream" style="flex:1;">
+				<div class="remote-stream">
           <video id="js-remote-stream"></video>
         </div>
 
